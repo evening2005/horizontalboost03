@@ -273,7 +273,7 @@ int car_steer(carType *carPtr, int amount, uint16_t howManyNPCs, carType *sorted
 void car_handle_buttons(carType *carPtr, carType *playerCar, uint16_t howManyNPCs, carType *startingGrid[]) {
     bool left = pge_get_button_state(BUTTON_ID_UP);
     if(left) {
-        APP_LOG(APP_LOG_LEVEL_DEBUG, "!!! LEFT -> y = %d", carPtr->worldPosition.y);
+        // APP_LOG(APP_LOG_LEVEL_DEBUG, "!!! LEFT -> y = %d", carPtr->worldPosition.y);
         if((carPtr->worldPosition.y) > (LEFT_EDGE + STEER_AMOUNT + (CAR_WIDTH/2))) {
             carPtr->worldPosition.y = car_steer(carPtr, -STEER_AMOUNT, howManyNPCs, startingGrid);
         } else {
