@@ -4,7 +4,7 @@
         ""
     ],
     "companyName": "andyw2004@gmail.com",
-    "longName": "Boost Racing (Horizontal) 01",
+    "longName": "Boost Racing (Horizontal) 03",
     "projectType": "native",
     "resources": {
         "media": [
@@ -142,12 +142,12 @@
         ]
     },
     "sdkVersion": "3",
-    "shortName": "BoostH02",
+    "shortName": "BoostH03",
     "targetPlatforms": [
         "basalt"
     ],
-    "uuid": "4a93db29-ac71-4ef3-93ab-2ecf87981c8e",
-    "versionLabel": "2.0",
+    "uuid": "04fbe141-5fcf-4bab-8fcc-87230032b70a",
+    "versionLabel": "3.1",
     "watchapp": {
         "watchface": false
     }

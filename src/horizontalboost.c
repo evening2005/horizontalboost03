@@ -23,13 +23,13 @@ static void game_logic() {
     } else if(get_current_state() == STATE_MARATHON) {
         race_reset_cars();
         race_set_difficulty(DIFFICULTY);
-        track_set_length(25000);
+        track_set_length(20000);
         main_menu_destroy();
         set_current_state(STATE_BEFORERACE);
     } else if(get_current_state() == STATE_SPRINT) {
         race_reset_cars();
         race_set_difficulty(DIFFICULTY);
-        track_set_length(6000);        
+        track_set_length(5000);        
         main_menu_destroy();
         set_current_state(STATE_BEFORERACE);
     } else if(get_current_state() == STATE_BEFORERACE) {
@@ -67,7 +67,7 @@ static void game_click(int buttonID, bool longClick) {
             // We really don't want to do anything with it...
         } else if(get_current_state() == STATE_AFTERRESULTS) {
             race_result_destroy_assets();
-            set_current_state(STATE_SHOWMAINMENU);
+            set_current_state(STATE_BEFORERACE);
         }
     } else if(buttonID == BUTTON_ID_BACK) {
         APP_LOG(APP_LOG_LEVEL_DEBUG, "!!!   hello BACK pressed !!!! (%d)", get_current_state());
@@ -77,6 +77,7 @@ static void game_click(int buttonID, bool longClick) {
                     break;
             case STATE_AFTERRESULTS:
                     race_result_destroy_assets();
+                    main_menu_destroy();
                     set_current_state(STATE_SHOWMAINMENU);
                     break;
             default:

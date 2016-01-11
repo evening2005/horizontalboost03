@@ -3,8 +3,6 @@
 #include "mainmenu.h"
 #include "pebble.h"
 
-#define NUM_MENU_SECTIONS 2
-#define NUM_FIRST_MENU_ITEMS 3
 
 static Window *mainMenuWindow;
 static SimpleMenuLayer *mainMenuLayer;
@@ -31,13 +29,13 @@ Window *main_menu_create() {
     set_current_state(STATE_QUITTING);
     
     mainMenuItems[0].title  = "MARATHON";
-    mainMenuItems[0].subtitle = "It's a marathon, not a sprint!";
+    mainMenuItems[0].subtitle = "20000m";
     mainMenuItems[0].icon = NULL;
     mainMenuItems[0].callback = mm_marathon_not_a_sprint;
 
     
     mainMenuItems[1].title  = "SPRINT";
-    mainMenuItems[1].subtitle = "5 cars, 600m, no compromise.";
+    mainMenuItems[1].subtitle = "5000m";
     mainMenuItems[1].icon = NULL;
     mainMenuItems[1].callback = mm_sprint_not_a_marathon;
 
@@ -81,15 +79,4 @@ void main_menu_destroy() {
         mainMenuWindow = NULL;        
     }
 }
-
-/*
-void main_menu_show() {
-    layer_set_hidden((Layer *)mainMenuLayer, false);
-}
-
-void main_menu_hide() {
-    layer_set_hidden((Layer *)mainMenuLayer, true);
-}
-*/
-
 
