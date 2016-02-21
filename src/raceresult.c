@@ -15,7 +15,7 @@ static char *titleText = "RESULTS";
 static GRect titleRect = { {0, 0}, {144, 40}};
 static TextLayer *resultsTitleLayer;
 
-void load_results_title_fonts() {
+void race_result_load_title_fonts() {
     customFont = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_PRAGATTINARROW_BOLD_18));
     titleFont = fonts_get_system_font(FONT_KEY_BITHAM_30_BLACK);
 
@@ -25,7 +25,7 @@ void load_results_title_fonts() {
     text_layer_set_text(resultsTitleLayer, titleText);    
 }
 
-void destroy_results_title_fonts() {
+void race_result_destroy_title_fonts() {
     fonts_unload_custom_font(customFont);
 
     layer_remove_from_parent((Layer *)resultsTitleLayer);

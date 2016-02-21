@@ -200,7 +200,7 @@ uint16_t ranged_random(uint16_t min, uint16_t max) {
     return rr;
 }
 
-static uint8_t boostIncs[10] = { 6, 7, 8, 10, 11, 12, 13, 13, 14, 15};
+static uint8_t boostIncs[10] = { 6, 7, 8, 10, 11, 12, 13, 13, 14, 15 };
 
 
 static uint8_t levelProfiles[10][10] = {

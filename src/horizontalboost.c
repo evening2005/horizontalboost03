@@ -82,6 +82,8 @@ static void game_click(int buttonID, bool longClick) {
         APP_LOG(APP_LOG_LEVEL_DEBUG, "!!!   hello BACK pressed !!!! (%d)", get_current_state());
         switch(get_current_state()) {
             case STATE_SPLASH:
+                    set_current_state(STATE_QUITTING);
+                    break;
             case STATE_RESULTS:
             case STATE_QUITTING:
                     break;
@@ -113,7 +115,7 @@ void pge_init() {
     //srand(get_milli_time());
     load_kerb_bitmaps();
     // Load the results backdrop
-    load_results_title_fonts();
+    race_result_load_title_fonts();
     
     // Load the finishing line bitmap
     load_finish_line_bitmap();
@@ -134,11 +136,12 @@ void pge_init() {
 void pge_deinit() {
     // Finish the game
     race_result_destroy_assets();
-    destroy_results_title_fonts();
+    race_result_destroy_title_fonts();
     race_result_destroy_animations();
     race_delete_cars();
     destroy_kerb_bitmaps();
     destroy_finish_line_bitmap();
+    app_timer_cancel(fpsTimer);
     light_off(NULL);
     main_menu_destroy();
     destroy_splashscreen();
