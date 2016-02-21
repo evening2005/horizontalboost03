@@ -28,14 +28,14 @@ Window *main_menu_create() {
     // Check out mm_marathon_not_a_sprint(..) above to see how to prevent this!
     set_current_state(STATE_QUITTING);
     
-    mainMenuItems[0].title  = "MARATHON";
-    mainMenuItems[0].subtitle = "20000m";
+    mainMenuItems[0].title  = "LONG RACE";
+    mainMenuItems[0].subtitle = "1400m";
     mainMenuItems[0].icon = NULL;
     mainMenuItems[0].callback = mm_marathon_not_a_sprint;
 
     
     mainMenuItems[1].title  = "SPRINT";
-    mainMenuItems[1].subtitle = "5000m";
+    mainMenuItems[1].subtitle = "700m";
     mainMenuItems[1].icon = NULL;
     mainMenuItems[1].callback = mm_sprint_not_a_marathon;
 
@@ -65,8 +65,8 @@ void main_menu_destroy() {
     if(mainMenuLayer != NULL) {
         APP_LOG(APP_LOG_LEVEL_DEBUG, "hello from main_menu_destroy!!!!!");
         APP_LOG(APP_LOG_LEVEL_DEBUG, "Current state is: %d!!!!", get_current_state());
-        simple_menu_layer_destroy(mainMenuLayer);
         layer_remove_from_parent((Layer *)mainMenuLayer);
+        simple_menu_layer_destroy(mainMenuLayer);
         window_stack_remove(mainMenuWindow, false);
         window_destroy(mainMenuWindow);
         mainMenuLayer = NULL;

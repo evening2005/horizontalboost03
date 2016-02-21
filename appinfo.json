@@ -4,10 +4,19 @@
         ""
     ],
     "companyName": "andyw2004@gmail.com",
+    "enableMultiJS": false,
     "longName": "Boost Racing (Horizontal) 03",
     "projectType": "native",
     "resources": {
         "media": [
+            {
+                "file": "images/splash.png",
+                "name": "IMAGE_SPLASHSCREEN",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "bitmap"
+            },
             {
                 "file": "images/yellowcar4.png",
                 "name": "YELLOW_TRUCK",

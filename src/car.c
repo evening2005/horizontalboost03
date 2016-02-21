@@ -209,7 +209,8 @@ void car_movement(carType *carPtr, uint16_t howManyNPCs, carType *sortedGrid[]) 
 
 
 #define BOOST_RANKS (10)
-static uint32_t permittedBoostTimes[BOOST_RANKS] = {400, 1250, 2000, 3000, 4000, 4500, 4750, 5000, 5250, 5500};
+// static uint32_t permittedBoostTimes[BOOST_RANKS] = {600, 1250, 2000, 3000, 4000, 4500, 4750, 5000, 5250, 5500};
+static uint32_t permittedBoostTimes[BOOST_RANKS] = {500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750};
 
 int car_get_permitted_boost_time(carType *carPtr) {
     uint32_t r = carPtr->rank;
@@ -409,7 +410,7 @@ void car_check_for_finisher(carType *carPtr, uint64_t raceStartTime) {
         if(carPtr->finished != 0) return;
         int ft = get_milli_time() - raceStartTime;
         carPtr->finished = ft;
-        APP_LOG(APP_LOG_LEVEL_DEBUG, "FINISHED: %d : %d - SPEED: %d - POSITION: %d", carPtr->carNumber, ft, (int)carPtr->currentSpeed >> 8, carPtr->worldPosition.y);
+        APP_LOG(APP_LOG_LEVEL_DEBUG, "FINISHED: %d : %d - SPEED: %d - POSITION: %d", carPtr->carNumber, ft, (int)carPtr->currentSpeed >> 8, carPtr->worldPosition.x);
    }
 }
 

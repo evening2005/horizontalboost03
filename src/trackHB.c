@@ -15,9 +15,9 @@ int16_t track_get_length() {
 
 static GRect gridPositions[GRID_SIZE];
 
-#define FRONTX (-20)
-#define SECONDX (-60)
-#define THIRDX (-100)
+#define FRONTX  (40)
+#define SECONDX (00)
+#define THIRDX (-40)
 #define OUTL (-64)
 #define INL  (-32)
 #define MID  (0)

@@ -1,6 +1,6 @@
 #pragma once
 
-enum STATEENUM {STATE_SPLASH, 
+enum STATEENUM {STATE_SPLASH,
                 STATE_SHOWMAINMENU, 
                 STATE_SELECTFUNCTION, 
                 STATE_MARATHON, 

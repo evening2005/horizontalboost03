@@ -2,5 +2,5 @@
 
 
 void light_off(void *data);
-void switch_on_light();
+void switch_on_light(int howLong);
 
