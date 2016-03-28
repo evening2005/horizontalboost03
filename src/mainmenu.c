@@ -21,23 +21,33 @@ static void mm_sprint_not_a_marathon(int index, void *ctx) {
     window_stack_pop(true);
 }
 
+static void mm_tutorial(int index, void *ctx) {
+    APP_LOG(APP_LOG_LEVEL_DEBUG, "TUTORIAL SELECTED");
+    set_current_state(STATE_TUTORIAL);
+    // window_stack_pop(true);
+}
+
 
 // window should be gameWindow, passed from horizontalboost.c
 Window *main_menu_create() {
     // Unless we hear otherwise, leaving the menu quits the game
     // Check out mm_marathon_not_a_sprint(..) above to see how to prevent this!
     set_current_state(STATE_QUITTING);
-    
-    mainMenuItems[0].title  = "LONG RACE";
-    mainMenuItems[0].subtitle = "1400m";
-    mainMenuItems[0].icon = NULL;
-    mainMenuItems[0].callback = mm_marathon_not_a_sprint;
 
-    
-    mainMenuItems[1].title  = "SPRINT";
-    mainMenuItems[1].subtitle = "700m";
+    mainMenuItems[0].title  = "SPRINT";
+    mainMenuItems[0].subtitle = "700m";
+    mainMenuItems[0].icon = NULL;
+    mainMenuItems[0].callback = mm_sprint_not_a_marathon;
+
+    mainMenuItems[1].title  = "LONG RACE";
+    mainMenuItems[1].subtitle = "1400m";
     mainMenuItems[1].icon = NULL;
-    mainMenuItems[1].callback = mm_sprint_not_a_marathon;
+    mainMenuItems[1].callback = mm_marathon_not_a_sprint;    
+
+    mainMenuItems[2].title  = "TUTORIAL";
+    mainMenuItems[2].subtitle = "how to play";
+    mainMenuItems[2].icon = NULL;
+    mainMenuItems[2].callback = mm_tutorial;    
 
     mainMenuSection.title = "MAIN MENU";
     mainMenuSection.items = mainMenuItems;

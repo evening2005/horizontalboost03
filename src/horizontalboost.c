@@ -57,7 +57,9 @@ static void game_logic() {
 static void game_draw(GContext *ctx) {
     graphics_context_set_compositing_mode(ctx, GCompOpSet);
     // Per-frame game rendering here
-    if(get_current_state() == STATE_RACING) {
+    if(get_current_state() == STATE_TUTORIAL) {
+        draw_track(ctx, car_get_camera_focus());
+    } else if(get_current_state() == STATE_RACING) {
         draw_track(ctx, car_get_camera_focus());
         race_draw_cars(ctx);        
     } else if(get_current_state() == STATE_RESULTS) {

@@ -10,6 +10,14 @@
     "resources": {
         "media": [
             {
+                "file": "images/TutorialBackground.png",
+                "name": "TUTORIAL_BACKGROUND",
+                "targetPlatforms": [
+                    "basalt"
+                ],
+                "type": "bitmap"
+            },
+            {
                 "file": "images/splash.png",
                 "name": "IMAGE_SPLASHSCREEN",
                 "targetPlatforms": [
@@ -156,7 +164,7 @@
         "basalt"
     ],
     "uuid": "04fbe141-5fcf-4bab-8fcc-87230032b70a",
-    "versionLabel": "3.1",
+    "versionLabel": "3.2",
     "watchapp": {
         "watchface": false
     }

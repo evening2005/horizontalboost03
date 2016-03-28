@@ -2,6 +2,7 @@
 #include "trackHB.h"
 #include "pge_sprite.h"
 #include "pge_collision.h"
+#include "statemachine.h"
 
 static int16_t trackFinishLine = TRACK_FINISH_LINE;
 
@@ -173,7 +174,9 @@ void draw_kerbs(GContext *ctx, int cameraFocus) {
 
 void draw_track(GContext *ctx, int cameraFocus) {
     draw_road_surface(ctx);
-    draw_remaining_distance(ctx, cameraFocus);
+    if(get_current_state() == STATE_RACING){
+        draw_remaining_distance(ctx, cameraFocus);  
+    } 
     draw_finish_line(ctx, cameraFocus);
     draw_kerbs(ctx, cameraFocus);
 }

@@ -2,6 +2,7 @@
 
 enum STATEENUM {STATE_SPLASH,
                 STATE_SHOWMAINMENU, 
+                STATE_TUTORIAL,
                 STATE_SELECTFUNCTION, 
                 STATE_MARATHON, 
                 STATE_SPRINT, 

@@ -210,7 +210,7 @@ void car_movement(carType *carPtr, uint16_t howManyNPCs, carType *sortedGrid[]) 
 
 #define BOOST_RANKS (10)
 // static uint32_t permittedBoostTimes[BOOST_RANKS] = {600, 1250, 2000, 3000, 4000, 4500, 4750, 5000, 5250, 5500};
-static uint32_t permittedBoostTimes[BOOST_RANKS] = {500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750};
+static uint32_t permittedBoostTimes[BOOST_RANKS] = {500, 750, 1000, 1250, 1500, 1750, 2000, 2400, 3000, 4000};
 
 int car_get_permitted_boost_time(carType *carPtr) {
     uint32_t r = carPtr->rank;
